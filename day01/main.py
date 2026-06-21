@@ -5,8 +5,8 @@ def square(x):
 def main():
     print('Hello from Rino-learning Day01!')
 
-    a = 3
-    b = 5
+    a = 10
+    b = 20
 
     print('a + b =', a + b)
 
@@ -15,7 +15,7 @@ def main():
         print(i)
 
     print('square(5) =', square(5))
-
+    print("a * b =", a * b)
 
 if __name__ == '__main__':
     main()
