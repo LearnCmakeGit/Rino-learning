@@ -1,4 +1,4 @@
-def main_prac()
+def main_prac():
     print("hello python")
 
 
