@@ -6,7 +6,7 @@ def main_prac():
     print("5 square", square(5))
     
     for i in range(10):
-        if i >5 :
+        if i >5 and i< 8 :
             print(i)
 
 if __name__ == '__main__':
