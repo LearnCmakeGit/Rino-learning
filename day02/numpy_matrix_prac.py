@@ -8,7 +8,7 @@ def main():
     
     x = np.array([0,0])
     r = b-A@x
-    print ("residual: ", np.linalg(r))
+    print ("residual: ", np.linalg.norm(r))
     
 
 
