@@ -2,7 +2,7 @@
 
 import numpy as np
 
-main():
+def main():
     A = np.array([[1,2],[3,4]])
     b = np.array([1,2])
     
