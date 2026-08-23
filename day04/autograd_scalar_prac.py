@@ -1,7 +1,7 @@
 import torch
 
 def main():
-    x = torch.tensor(3, requires_grad = true)
+    x = torch.tensor(3, requires_grad = True)
     y = x**2 +2 * x + 1
     y.backward()
     print("x = ", x)
