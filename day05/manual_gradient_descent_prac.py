@@ -21,7 +21,7 @@ def main():
     learn_rate = 1.0
     num_steps = 100;
     
-    print(“x =", x.shape)
+    print("x =", x.shape)
     print("w =", w.shape)
     print("b =" ,b.shape)
     print("y = ", (x @ w.T + b).shape)
