@@ -26,8 +26,11 @@ def main():
         loss.backward()
         
         with torch.no_grad():
-            w += w.grad()
-            b += b.grad()
+            w -= w.grad
+            b -= b.grad
+            
+        w.grad_zero_()
+        b.grad_zero_()
      
     print("w = ", w.item())
     print("b = ", b.item())
