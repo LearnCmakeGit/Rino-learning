@@ -23,7 +23,7 @@ def main():
     for i in range(num_steps):
         y = x@w.T + b
         loss = torch.mean(y-y_true)
-        loss.backword()
+        loss.backward()
         
         with torch.no_grad():
             w += w.grad()
