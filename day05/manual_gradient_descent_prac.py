@@ -21,11 +21,11 @@ def main():
     learn_rate = 0.1
     num_steps = 100;
     
-    print(x.shape)
-    print(w.shape)
-    print(b.shape)
-    print((x @ w.T + b).shape)
-    print(y_true.shape)
+    print(“x =", x.shape)
+    print("w =", w.shape)
+    print("b =" ,b.shape)
+    print("y = ", (x @ w.T + b).shape)
+    print("y_true = ", y_true.shape)
     
     for i in range(num_steps):
         y = x@w.T + b
