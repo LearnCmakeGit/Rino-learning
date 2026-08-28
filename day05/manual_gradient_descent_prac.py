@@ -22,15 +22,15 @@ def main():
     num_steps = 100;
     for i in range(num_steps):
         y = x@w.T + b
-        loss = torch.mean(y-y_true)
+        loss = torch.mean((y-y_true)**2)
         loss.backward()
         
         with torch.no_grad():
             w -= w.grad
             b -= b.grad
             
-        w.grad_zero_()
-        b.grad_zero_()
+        w.grad.zero_()
+        b.grad.zero_()
      
     print("w = ", w.item())
     print("b = ", b.item())
