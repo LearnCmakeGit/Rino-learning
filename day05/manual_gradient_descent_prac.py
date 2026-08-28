@@ -26,8 +26,8 @@ def main():
         loss.backward()
         
         with torch.no_grad():
-            w -= w.grad
-            b -= b.grad
+            w -= learn_rate * w.grad
+            b -= learn_rate * b.grad
             
         w.grad.zero_()
         b.grad.zero_()
