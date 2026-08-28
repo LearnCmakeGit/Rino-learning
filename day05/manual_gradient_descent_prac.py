@@ -18,7 +18,7 @@ def main():
     w = torch.tensor([[0.0]],requires_grad = True)
     b = torch.tensor([[0.0]],requires_grad = True)
 
-    learn_rate = 1.0
+    learn_rate = 0.23
     num_steps = 100;
     
     print("x =", x.shape)
