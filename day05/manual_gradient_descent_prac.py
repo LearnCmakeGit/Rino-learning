@@ -15,11 +15,18 @@ def main():
         [7.0]
         ])
     
-    w = torch.tensor([0.0],requires_grad = True)
-    b = torch.tensor([0.0],requires_grad = True)
+    w = torch.tensor([[0.0]],requires_grad = True)
+    b = torch.tensor([[0.0]],requires_grad = True)
 
     learn_rate = 0.1
     num_steps = 100;
+    
+    print(x.shape)
+    print(w.shape)
+    print(b.shape)
+    print((x @ w.T + b).shape)
+    print(y_true.shape)
+    
     for i in range(num_steps):
         y = x@w.T + b
         loss = torch.mean((y-y_true)**2)
