@@ -38,7 +38,7 @@ def main():
         loss.backward()
 
         # Print occasionally so we can watch convergence.
-        if step % 10 == 0 or step == num_steps - 1:
+        if step % 1 == 0 or step == num_steps - 1:
             print(
                 f"step={step:3d}  "
                 f"loss={loss.item():.6f}  "
