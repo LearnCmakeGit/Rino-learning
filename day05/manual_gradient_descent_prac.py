@@ -35,7 +35,8 @@ def main():
         with torch.no_grad():
             w -= learn_rate * w.grad
             b -= learn_rate * b.grad
-            
+        if i%10 == 0:
+            print("step ", i , "w = ", w.item(), "b =", b.item())
         w.grad.zero_()
         b.grad.zero_()
      
