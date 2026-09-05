@@ -9,8 +9,8 @@ def main():
     model = nn.Linear(in_features = 1,out_features = 1)
     
     with torch.no_grad():
-        model.weight.refil_(0.0)
-        model.bias.refil_(0.0)
+        model.weight.fill_(0.0)
+        model.bias.fill_(0.0)
     
     
     ls_fn = nn.MSELoss()
