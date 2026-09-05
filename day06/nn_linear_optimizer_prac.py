@@ -9,8 +9,8 @@ def main():
     model = nn.linear(in=1,out=1)
     
     with torch.no_grad():
-        model.weight.refil(0.0)
-        model.bias.refil(0.0)
+        model.weight.refil_(0.0)
+        model.bias.refil_(0.0)
     
     
     ls_fn = nn.MSE()
@@ -20,8 +20,9 @@ def main():
     for i in range(num_steps):
         y = model(x)
         ls = ls_fn(y,y_true)
+        optm.zero_grad()
         ls.backward()
-        optm.update()
+        optm.step()
         
     print("model weight: ", model.weight.item())
     print("model bias: ", medel.bias.item())
