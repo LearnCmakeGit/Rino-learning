@@ -25,7 +25,7 @@ def main():
         optm.step()
         
     print("model weight: ", model.weight.item())
-    print("model bias: ", medel.bias.item())
+    print("model bias: ", model.bias.item())
 
 if __name__ == "__main__":
     main()
