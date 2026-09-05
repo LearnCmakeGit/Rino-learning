@@ -4,7 +4,7 @@ from torch import nn
 
 def main():
     x = torch.tensor([[0.0],[1.0],[2.0],[3.0]])
-    y_true = torch.tensor([1.0],[3.0],[5.0],[7.0]])
+    y_true = torch.tensor([[1.0],[3.0],[5.0],[7.0]])
     
     model = nn.linear(in=1,out=1)
     
