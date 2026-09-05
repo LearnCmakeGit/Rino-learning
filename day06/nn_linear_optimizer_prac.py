@@ -1,9 +1,30 @@
 
 import torch
-from torch import as nn
+from torch import nn
 
 def main():
+    x = torch.tensor([[0.0],[1.0],[2.0],[3.0]])
+    y_true = torch.tensor([1.0],[3.0],[5.0],[7.0]])
     
+    model = nn.linear(in=1,out=1)
+    
+    with torch.no_grad():
+        model.weight.refil(0.0)
+        model.bias.refil(0.0)
+    
+    
+    ls_fn = nn.MSE()
+    
+    optm = torch.optim.SDG(model.parameters(), lr=0.1)
+    num_step = 100
+    for i in range(num_steps):
+        y = model(x)
+        ls = ls_fn(y,y_true)
+        ls.backward()
+        optm.update()
+        
+    print("model weight: ", model.weight.item())
+    print("model bias: ", medel.bias.item())
 
 if __name__ == "__main__":
     main()
