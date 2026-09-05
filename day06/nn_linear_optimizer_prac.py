@@ -13,7 +13,7 @@ def main():
         model.bias.refil_(0.0)
     
     
-    ls_fn = nn.MSE()
+    ls_fn = nn.MSELoss()
     
     optm = torch.optim.SDG(model.parameters(), lr=0.1)
     num_step = 100
