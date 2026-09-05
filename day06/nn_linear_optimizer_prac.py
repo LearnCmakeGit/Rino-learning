@@ -16,7 +16,7 @@ def main():
     ls_fn = nn.MSELoss()
     
     optm = torch.optim.SGD(model.parameters(), lr=0.1)
-    num_step = 100
+    num_steps = 100
     for i in range(num_steps):
         y = model(x)
         ls = ls_fn(y,y_true)
