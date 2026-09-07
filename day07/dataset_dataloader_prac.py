@@ -3,7 +3,7 @@ import torch
 from torch import nn
 from torch.utils.data import Dataset, DataLoader
 
-class LineDataLoader(dataset):
+class LineDataLoader(Dataset):
     def __init__(self):
         self.x = torch.tensor([[0.0],[1.0],[2.0],[3.0]])
         self.y_true = torch.tensor([[1.0],[3.0],[5.0],[7.0]])
