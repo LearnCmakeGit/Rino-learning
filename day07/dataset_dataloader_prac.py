@@ -34,13 +34,16 @@ def main():
     num_steps = 100
     for step in range(num_steps):
         epoch_loss = 0.0
-        for batch_x, batch_y in dataloader:
+        for (batch_x, batch_y) in dataloader:
             y = model(batch_x)
             ls = ls_fn(y, batch_y)
             ls.backward()
             opt.step()
             opt.zero_grad()
-        epoch_loss += ls * len(batch_x)
+            epoch_loss += ls.item()
+        if step % 10 == 0 or step == num_steps -1:
+            print(f" epoch {step:3d} loss{epich_loss:.4e}")
+        
         
     print("model weight: ", model.weight.item())
     print("model bias: ", model.bias.item())
