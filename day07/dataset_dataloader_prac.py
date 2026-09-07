@@ -23,7 +23,7 @@ def main():
                   shuffle = True)
     
     model = nn.Linear(in_features =1, out_features = 1)
-    with no_grad():
+    with torch.no_grad():
         model.weight.fill_(0)
         model.bias.fill_(0)
     
@@ -40,7 +40,7 @@ def main():
             ls.backward()
             opt.step()
             opt.zero_grad()
-        epoch_loss += ls/len(dataset)
+        epoch_loss += ls * len(batch_x)
         
     print("model weight: ", model.weight.item())
     print("model bias: ", model.bias.item())
