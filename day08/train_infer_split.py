@@ -12,6 +12,8 @@ Run in Colab:
     python day08/train_infer_split.py
 """
 
+from pathlib import Path
+
 import torch
 from torch import nn
 from torch.utils.data import Dataset, DataLoader
@@ -69,7 +71,12 @@ def train_model():
     print("weight =", model.weight.detach())
     print("bias   =", model.bias.detach())
 
-    checkpoint_path = "day08/line_model.pt"
+    # Use the script's own directory, not the current working directory.
+    # This makes checkpoint saving work even if the script is launched
+    # from /content or another directory.
+    script_dir = Path(__file__).resolve().parent
+    checkpoint_path = script_dir / "line_model.pt"
+
     torch.save(model.state_dict(), checkpoint_path)
     print("\nSaved checkpoint:", checkpoint_path)
 
