@@ -1,7 +1,7 @@
 
 import torch
 from torch import nn
-from torch.util import dataset dataloader
+from torch.util.data import dataset, dataloader
 
 class LineDataLoader(dataset):
     def __init__(self):
@@ -12,7 +12,7 @@ class LineDataLoader(dataset):
         return len(self.x)
     
     def __getitem__(self, index):
-        return (self.x[index], self.y[index])
+        return (self.x[index], self.y_true[index])
 
 def main():
     dataset = LineDataLoader()
@@ -29,7 +29,7 @@ def main():
     
     
     ls_fn = nn.MSELoss()
-    opt = torch.optim.SGD(model, lr=0.1)
+    opt = torch.optim.SGD(model.parameters(), lr=0.1)
 
     num_steps = 100
     for step in range(num_steps):
@@ -37,7 +37,7 @@ def main():
         for batch_x, batch_y from dataloader:
             y = model(batch_x)
             ls = ls_fn(y, batch_y)
-            ls.backword()
+            ls.backward()
             opt.step()
             opt.zero_grad()
         epoch_loss += ls/len(dataset)
