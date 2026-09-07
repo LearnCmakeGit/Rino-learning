@@ -20,7 +20,7 @@ def main():
     dataloader =DataLoader(
                   dataset,
                   batch_size=2,
-                  shuffle = true)
+                  shuffle = True)
     
     model = nn.Linear(in_features =1, out_features = 1)
     with no_grad:
