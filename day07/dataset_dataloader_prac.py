@@ -1,7 +1,7 @@
 
 import torch
 from torch import nn
-from torch.util.data import dataset, dataloader
+from torch.utils.data import Dataset, DataLoader
 
 class LineDataLoader(dataset):
     def __init__(self):
