@@ -42,7 +42,7 @@ def main():
             opt.zero_grad()
             epoch_loss += ls.item()
         if step % 10 == 0 or step == num_steps -1:
-            print(f" epoch {step:3d} loss{epich_loss:.4e}")
+            print(f" epoch {step:3d} loss{epoch_loss:.4e}")
         
         
     print("model weight: ", model.weight.item())
