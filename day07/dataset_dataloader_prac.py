@@ -34,7 +34,7 @@ def main():
     num_steps = 100
     for step in range(num_steps):
         epoch_loss = 0.0
-        for batch_x, batch_y from dataloader:
+        for batch_x, batch_y in dataloader:
             y = model(batch_x)
             ls = ls_fn(y, batch_y)
             ls.backward()
