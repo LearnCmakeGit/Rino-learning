@@ -23,7 +23,7 @@ def main():
                   shuffle = True)
     
     model = nn.Linear(in_features =1, out_features = 1)
-    with no_grad:
+    with no_grad():
         model.weight.fill_(0)
         model.bias.fill_(0)
     
