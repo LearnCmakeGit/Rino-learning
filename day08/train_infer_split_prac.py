@@ -39,6 +39,7 @@ def model_train():
             opt.step()
         epoch_loss += ls.item()
     print(" Train complete")
+    return model
     
 def model_infer(model):
     x_test = torch.tensor([[10.0], [11.0]])
@@ -46,11 +47,6 @@ def model_infer(model):
         y_test = model(x_test)
     print("x_test: ", x_test.tolist())
     print("y_prod: ", y_test.tolist())
-    
-    
-                
-
-
 
 def main():
     model = model_train()
