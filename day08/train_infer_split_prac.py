@@ -46,7 +46,7 @@ def model_train():
     script_dir = Path(__file__).resolve().parent
     checkpoint_file = script_dir / "check.pt"
     
-    torch.save(model.state_dict(), checkpiont_file)
+    torch.save(model.state_dict(), checkpoint_file)
     
     return model
     
