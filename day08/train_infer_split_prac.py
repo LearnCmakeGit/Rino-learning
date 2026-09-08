@@ -43,6 +43,11 @@ def model_train():
         if step % 10 == 0 or step == num_steps -1:
             print (f"epoch: {step:3d} , epoch_loss: {epoch_loss:.4e}")
     print(" Train complete")
+    script_dir = Path(__file__).resolve().parent
+    checkpoint_file = script_dir / "check.pt"
+    
+    torch.save(model.state_dict(), checkpiont_file)
+    
     return model
     
 def model_infer(model):
