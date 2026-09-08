@@ -22,10 +22,11 @@ def model_train():
                  shuffle = True)
     
     model = nn.Linear(in_features = 1, out_features = 1)
-    
+    model.train()
     with torch.no_grad():
         model.weight.fill_(0.0)
         model.bias.fill_(0.0)
+    
     ls_fn = nn.MSELoss()
     opt = torch.optim.SGD(model.parameters(), lr = 0.1)
     
@@ -39,10 +40,13 @@ def model_train():
             ls.backward()
             opt.step()
         epoch_loss += ls.item()
+        if step % 10 == 0 or step == num_steps -1:
+            print (f"epoch: {step:3d} , epoch_loss: {epoch_loss:.4e}")
     print(" Train complete")
     return model
     
 def model_infer(model):
+    model.eval()
     x_test = torch.tensor([[10.0], [11.0]])
     with torch.no_grad():
         y_test = model(x_test)
