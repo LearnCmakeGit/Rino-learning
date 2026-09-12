@@ -1,5 +1,5 @@
 import torch
-from torch.nn.data import Dataset
+from torch.utils.data import Dataset
 
 def LineData():
     
