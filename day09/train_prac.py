@@ -2,7 +2,7 @@
 from pathlib import Path
 import torch
 from torch import nn
-from torch.nn.data import DataLoader
+from torch.utils.data import DataLoader
 
 from data_prac import LineData
 from model_prac import model_prac
