@@ -32,6 +32,7 @@ def main():
     print(" save check point")
     checkpoint = Path(__file__).resolve().parent()/"checkpoint.pt"
     torch.save(torch.state_dict(),checkpoint)
-
+    print(f" model weight: {model.lin.weight.item()}")
+    ptint(f" model bias: {model.lin.bias.item()}")
 if __name__ == "__main__":
     main()
