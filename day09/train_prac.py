@@ -1,6 +1,7 @@
 
 from pathlib import Path
 import torch
+from torch import nn
 from torch.nn.data import DataLoader
 
 from data_prac import LineData
@@ -12,7 +13,7 @@ def main():
     
     model = model_prac()
     
-    ls_fn = torch.MSELoss()
+    ls_fn = nn.MSELoss()
     opt = torch.optim.SGD(model.parameters(), lr=0.1)
     
     num_steps = 100
@@ -31,8 +32,6 @@ def main():
     print(" save check point")
     checkpoint = Path(__file__).resolve().parent()/"checkpoint.pt"
     torch.save(torch.state_dict(),checkpoint)
-
-
 
 if __name__ == "__main__":
     main()
