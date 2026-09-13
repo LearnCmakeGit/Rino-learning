@@ -6,5 +6,5 @@ class model_prac(nn.Module):
         super().__init__()
         self.lin = nn.Linear(in_features = 1, out_features = 1)
     
-    def forward(self):
-        return self.lin
+    def forward(self, x):
+        return self.lin(x)
