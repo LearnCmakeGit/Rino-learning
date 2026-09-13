@@ -10,8 +10,6 @@ def main():
     state = torch.load(checkpoint)
     model.load_state_dict(state)
     
-    state = torch.
-    
     model.eval()
     
     test_x = torch.tensor([[10.0],[12]])
