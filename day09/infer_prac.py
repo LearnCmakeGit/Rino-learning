@@ -12,13 +12,11 @@ def main():
     
     model.eval()
     
-    test_x = torch.tensor([[10.0],[12]])
+    test_x = torch.tensor([[10.0],[12.0]])
     with torch.no_grad():
-        y_pred = model(text_x)
+        y_pred = model(test_x)
 
-    print(f" predicted: {y_pred.tolist():.4e})
-
-
+    print("predicted: ", y_pred.tolist())
 
 if __name__ == "__main__":
     main()
