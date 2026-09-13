@@ -30,7 +30,7 @@ def main():
             print(f"step {step:3d}: epoch loss {epoch_loss:.4e}")
     
     print(" save check point")
-    checkpoint = Path(__file__).resolve().parent()/"checkpoint.pt"
+    checkpoint = Path(__file__).resolve().parent / "checkpoint.pt"
     torch.save(torch.state_dict(),checkpoint)
     print(f" model weight: {model.lin.weight.item()}")
     ptint(f" model bias: {model.lin.bias.item()}")
