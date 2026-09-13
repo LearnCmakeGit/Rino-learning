@@ -1,7 +1,7 @@
 import torch
 from torch.utils.data import Dataset
 
-def LineData():
+class LineData():
     
     def __init__(self):
         
