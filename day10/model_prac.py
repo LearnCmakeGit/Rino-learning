@@ -6,7 +6,7 @@ class MLP(nn.Module):
     def __init__(self, in_features, hidden_features, out_features):
         super().__init__()
         
-        slef.net = nn.Sequential(
+        self.net = nn.Sequential(
             nn.Linear(in_features, hidden_features),
             nn.ReLU(),
             nn.Linear(hidden_features, out_features)
