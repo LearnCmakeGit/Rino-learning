@@ -8,7 +8,7 @@ class MLP(nn.Module):
         
         slef.net = nn.Sequential(
             nn.Linear(in_features, hidden_features),
-            nn.Relu(),
+            nn.ReLU(),
             nn.Linear(hidden_features, out_features)
         )
         
