@@ -7,9 +7,9 @@ class MLP(nn.Module):
         super().__init__()
         
         slef.net = nn.Sequential(
-            nn.linear(in_features, hidden_features),
+            nn.Linear(in_features, hidden_features),
             nn.Relu(),
-            nn.linear(hidden_features, out_features)
+            nn.Linear(hidden_features, out_features)
         )
         
     def forward(self,x):
