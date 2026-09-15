@@ -3,7 +3,7 @@ import torch
 from torch import nn
 
 def main():
-    x = torch.Linspace(-2,2,41).reshape(-1,1)
+    x = torch.linspace(-2,2,41).reshape(-1,1)
     y = x**2
     
     model = MLP(in_features = 1, hidden_features = 8, out_features = 1)
