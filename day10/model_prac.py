@@ -2,14 +2,15 @@ import torch
 from torch import nn
 
 class MLP(nn.Module):
-    super():__init__()
     
-    def __init__(self):
-        slef.net = nn.sequential{
-            nn.linear(in_features=1, 
+    def __init__(self, infeatures, hidden_features, out_features):
+        super().__init__()
+        
+        slef.net = nn.sequential(
+            nn.linear(in_features, hidden_features)
             nn.Relu()
-            nn.linear()
-        }
+            nn.linear(hidden_features, out_features)
+        )
         
     def forward(self,x):
         return self.net(x)
