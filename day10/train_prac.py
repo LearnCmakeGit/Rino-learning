@@ -2,6 +2,8 @@ from pathlib import Path
 import torch
 from torch import nn
 
+from model_prac import MLP
+
 def main():
     x = torch.linspace(-2,2,41).reshape(-1,1)
     y = x**2
