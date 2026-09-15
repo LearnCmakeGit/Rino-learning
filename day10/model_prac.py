@@ -7,8 +7,8 @@ class MLP(nn.Module):
         super().__init__()
         
         slef.net = nn.sequential(
-            nn.linear(in_features, hidden_features)
-            nn.Relu()
+            nn.linear(in_features, hidden_features),
+            nn.Relu(),
             nn.linear(hidden_features, out_features)
         )
         
