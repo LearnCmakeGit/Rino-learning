@@ -8,7 +8,7 @@ def main():
     
     model = MLP()
     ls_fn = nn.MSELoss()
-    opt = torch.optim(model.parameters(),lr=0.1)
+    opt = torch.optim.SGD(model.parameters(),lr=0.1)
     model.train()
     
     num_steps =1000
