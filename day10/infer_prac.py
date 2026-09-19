@@ -7,7 +7,7 @@ def main():
     model = MLP(in_features=1, hidden_features=8, out_features=1)
     
     checkpoint= Path(__file__).resolve().parent/"mlp.pt"
-    state = torch.load(checkpoint, location="cpu")
+    state = torch.load(checkpoint, map_location="cpu")
     model.load_state_dict(state)
     
     test = torch.tensor([[10.0],[15.0]])
