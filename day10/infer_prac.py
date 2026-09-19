@@ -6,7 +6,7 @@ from model_prac import MLP
 def main():
     model = MLP(in_features=1, hidden_features=8, out_features=1)
     
-    checkpoint= Path(__file__).resolve().parent/"MLP.pt"
+    checkpoint= Path(__file__).resolve().parent/"mlp.pt"
     state = torch.load(checkpoint, location="cpu")
     model.load_state_dict(state)
     
