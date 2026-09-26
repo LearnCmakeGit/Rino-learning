@@ -30,7 +30,16 @@ def main():
             
     print(model)
     for name, param in model.parameters():
-        print(")
+        print(f"{name:25s}, {tuple(param.shape)}")
+    
+    model.eval()
+    with torch.no_grad():
+        sample = X[0:1]
+        z=model.encoder(sample)
+        recon = model.decoder(z)
+        
+    print("latent space: ", z.tolist())
+    
     
             
             
