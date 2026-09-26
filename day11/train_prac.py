@@ -18,7 +18,7 @@ def main():
     num_steps = 1000
     for step in range(num_steps):
         epoch_loss = 0.0
-        for batch_x, batch_y from dataloader:
+        for batch_x, batch_y in dataloader:
             y_pred =model(batch_x)
             ls = ls_fn(y_pred, batch_y)
              opt.zero_grad()
@@ -29,6 +29,8 @@ def main():
             prinf(f"epoch_loss: {epoch_loss}")
             
     print(model)
+    for name, param in model.parameters():
+        print(")
     
             
             
