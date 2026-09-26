@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 from torch.utils.data import TensorDataset DataLoader
-
+from pathlib import Path
 from model_prac import AutoEncoder
 
 def main():
@@ -40,7 +40,8 @@ def main():
         
     print("latent space: ", z.tolist())
     
-    
+    checkpoint = Path(__file__).resolve().parent()/"auto.pt"
+    torch.save_state_dict(checkpoint)
             
             
     
