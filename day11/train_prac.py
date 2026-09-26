@@ -40,8 +40,8 @@ def main():
         
     print("latent space: ", z.tolist())
     
-    checkpoint = Path(__file__).resolve().parent()/"auto.pt"
-    torch.save_state_dict(checkpoint)
+    checkpoint = Path(__file__).resolve().parent/"auto.pt"
+    torch.save(model.state_dict(),checkpoint)
             
             
     
