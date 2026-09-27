@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from torch.utils.data import TensorDataset DataLoader
+from torch.utils.data import TensorDataset, DataLoader
 from pathlib import Path
 from model_prac import AutoEncoder
 
