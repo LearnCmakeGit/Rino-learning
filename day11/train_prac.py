@@ -12,8 +12,8 @@ def dataPrep(num_samples=256,num_points=16):
         phase = torch.sin(torch.tensor(float(i)))
         u=torch.sin(2.0*torch.pi*a*x +phase)
         sample.append(u)
-    torch.stack(sample)
-    return sample
+    X = torch.stack(sample)
+    return X
 
 def main():
     X = dataPrep()
