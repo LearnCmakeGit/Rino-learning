@@ -15,9 +15,9 @@ class AutoEncoder(nn.Module):
                    nn.ReLU(),
                    nn.Linear(8,out_features)
                    )
-    def encoder(self,x):
+    def encode(self,x):
         return self.encoder(x)
-    def decoder(self,z):
+    def decode(self,z):
         return self.decoder(z)
     def forward(self, x):
         z=self.encoder(x)
