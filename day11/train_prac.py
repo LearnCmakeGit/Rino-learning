@@ -40,7 +40,7 @@ def main():
             print(f"epoch_loss: {epoch_loss}")
             
     print(model)
-    for name, param in model.parameters():
+    for name, param in model.named_parameters():
         print(f"{name:25s}, {tuple(param.shape)}")
     
     model.eval()
