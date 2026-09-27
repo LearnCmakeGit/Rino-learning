@@ -32,7 +32,7 @@ def main():
         for batch_x, batch_y in dataloader:
             y_pred =model(batch_x)
             ls = ls_fn(y_pred, batch_y)
-             opt.zero_grad()
+            opt.zero_grad()
             ls.backward()
             opt.step()
             epoch_loss += ls.item()
