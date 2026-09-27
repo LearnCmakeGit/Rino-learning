@@ -23,7 +23,7 @@ def main():
     
     model = AutoEncoder(in_features = 16, latent_dim = 3, out_features=16)
     ls_fn = nn.MSELoss()
-    opt = torch.optim.SGD(model.parameters(), lt=0.1)
+    opt = torch.optim.SGD(model.parameters(), lr=0.1)
     model.train()
     
     num_steps = 1000
@@ -36,7 +36,7 @@ def main():
             ls.backward()
             opt.step()
             epoch_loss += ls.item()
-        if(step % 100==0 or step == nums_steps -1):
+        if(step % 100==0 or step == num_steps -1):
             prinf(f"epoch_loss: {epoch_loss}")
             
     print(model)
