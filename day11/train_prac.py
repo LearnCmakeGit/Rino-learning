@@ -4,16 +4,15 @@ from torch.utils.data import TensorDataset DataLoader
 from pathlib import Path
 from model_prac import AutoEncoder
 
-def dataPrep():
-    x=torch.linearspace(0:1:16)
-    num_samples = 256
+def dataPrep(num_samples=256,num_points=16):
+    x=torch.linspace(0,1,num_points)
     sample=[]
     for i in range (num_samples):
         a = 0.5 + 2.5*(i/num_samples)
-        phase = torch.sin(torch.float(i))
+        phase = torch.sin(torch.tensor(float(i)))
         u=torch.sin(2.0*torch.pi*a*x +phase)
         sample.append(u)
-    sample.stack()
+    torch.stack(sample)
     return sample
 
 def main():
