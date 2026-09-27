@@ -46,8 +46,8 @@ def main():
     model.eval()
     with torch.no_grad():
         sample = X[0:1]
-        z=model.encoder(sample)
-        recon = model.decoder(z)
+        z=model.encode(sample)
+        recon = model.decode(z)
         
     print("latent space: ", z.tolist())
     
