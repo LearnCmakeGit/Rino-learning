@@ -34,6 +34,9 @@ def main():
     model.eval()
     with torch.no_grad():
         samp_u = u_input[0:1]
+        samp_x = x_query[0:1]
+        u_pred = model(u_input, x_query)
+    
         
 
 if __name__ == "__main__":
