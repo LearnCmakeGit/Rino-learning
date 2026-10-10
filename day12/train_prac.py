@@ -18,7 +18,7 @@ def main():
     ls_fn = nn.MSELoss()
     opt = torch.optim.SGD(model.parameters(), lr =0.1)
     num_steps = 800
-    
+    model.train()
     for step in range(num_steps):
         epoch_loss = 0.0
         for batch_u_input, batch_x, batch_u in loader:
@@ -31,7 +31,10 @@ def main():
         if step%100 ==0 or step ==num_steps-1:
             print(f"step: "{step} " epoch loss: "{epoch_loss})
             
-    
+    model.eval()
+    with torch.no_grad():
+        samp_u = u_input[0:1]
+        
 
 if __name__ == "__main__":
     main()
