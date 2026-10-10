@@ -25,6 +25,11 @@ def main():
             batch_pred = model(batch_u_input, batch_x)
             ls = ls_fn(batch_u, batch_pred)
             opt.zero_grad()
+            ls.backward()
+            opt.step()
+        epoch_loss += ls.item()
+        if step%100 ==0 or step ==num_steps-1:
+            print(f"step: "{step} " epoch loss: "{epoch_loss})
             
     
 
