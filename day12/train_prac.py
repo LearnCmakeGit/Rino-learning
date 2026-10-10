@@ -37,7 +37,8 @@ def main():
         samp_x = x_query[0:1]
         u_pred = model(u_input, x_query)
     
-        
+    checkpoint = Path(__file__).resolve().parent/"check.pt"
+    torch.save(model.parameters(), check)
 
 if __name__ == "__main__":
     main()
