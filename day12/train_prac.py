@@ -17,8 +17,15 @@ def main():
     
     ls_fn = nn.MSELoss()
     opt = torch.optim.SGD(model.parameters(), lr =0.1)
+    num_steps = 800
     
-    
+    for step in range(num_steps):
+        epoch_loss = 0.0
+        for batch_u_input, batch_x, batch_u in loader:
+            batch_pred = model(batch_u_input, batch_x)
+            ls = ls_fn(batch_u, batch_pred)
+            opt.zero_grad()
+            
     
 
 if __name__ == "__main__":
