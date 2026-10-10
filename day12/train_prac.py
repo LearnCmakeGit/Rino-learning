@@ -7,6 +7,8 @@ from pathlib import Path
 from model_prac import model_prac
 
 def MakeData():
+    u_input = nn.Linearspace(0,1,16)
+    x_query = nn.Linearspace(0,1,16).view(1,16)
     
     
 def main():
