@@ -38,7 +38,8 @@ def main():
         samp_u = u_input[0:1]
         samp_x = x_query[0:1]
         u_pred,z= model(u_input, x_query)
-        
+    print("input shape: ", tuple(samp_u.shape))
+    
     
     
     checkpoint = Path(__file__).resolve().parent/"check.pt"
