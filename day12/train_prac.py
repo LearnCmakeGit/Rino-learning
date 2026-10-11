@@ -15,7 +15,7 @@ def main():
     u_input,x_query,u_query = MakeData()
     dataset = TensorDataset(u_input, x_query, u_query)
     loader = DataLoader(dataset, batch_size = 32, shuffle = True)
-    model = model_prac(in_features=16, hiden_dim =4, out_features=32)
+    model = model_prac(in_features=16, hidden_dim =32,latent_dim=32)
     
     ls_fn = nn.MSELoss()
     opt = torch.optim.SGD(model.parameters(), lr =0.1)
@@ -24,12 +24,12 @@ def main():
     for step in range(num_steps):
         epoch_loss = 0.0
         for batch_u_input, batch_x, batch_u in loader:
-            batch_pred = model(batch_u_input, batch_x)
+            batch_pred,z= model(batch_u_input, batch_x)
             ls = ls_fn(batch_u, batch_pred)
             opt.zero_grad()
             ls.backward()
             opt.step()
-        epoch_loss += ls.item()
+            epoch_loss += ls.item()
         if step%100 ==0 or step ==num_steps-1:
             print(f"step: "{step} " epoch loss: "{epoch_loss})
             
@@ -37,10 +37,12 @@ def main():
     with torch.no_grad():
         samp_u = u_input[0:1]
         samp_x = x_query[0:1]
-        u_pred = model(u_input, x_query)
+        u_pred,z= model(u_input, x_query)
+        
+    
     
     checkpoint = Path(__file__).resolve().parent/"check.pt"
-    torch.save(model.parameters(), check)
+    torch.save(model.dict_state(), checkpoint)
 
 if __name__ == "__main__":
     main()
