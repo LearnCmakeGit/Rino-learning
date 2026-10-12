@@ -45,8 +45,10 @@ def main():
     print(" u query shape: " tuple(u_pred))
     
     for i in range(5):
-        print("samp_x: ", samp_x[0,i,0].item()
-        print("samp_u: ", up_pred[0,i,0].item()
+        xp = samp_x[0,i,0].item()
+        up =u_pred[0,i,0].item()
+        u_true=true_u[0,i,0].item()
+        print(f"xp: "{xp:.5f}, "up: "{up:+.5f},"true: "{u_true:+.5f})
     
     
     checkpoint = Path(__file__).resolve().parent/"check.pt"
