@@ -37,6 +37,7 @@ def main():
     with torch.no_grad():
         samp_u = u_input[0:1]
         samp_x = x_query[0:1]
+        true_u = u_query[0:1]
         u_pred,z= model(u_input, x_query)
     print(" input shape: ", tuple(samp_u.shape))
     print(" x query shape: ", tuple(samp_x.shape))
@@ -44,7 +45,9 @@ def main():
     print(" u query shape: " tuple(u_pred))
     
     for i in range(5):
-        print(" input: ", i, samp_u[0,i])
+        print("samp_x: ", samp_x[0,i,0].item()
+        print("samp_u: ", up_pred[0,i,0].item()
+    
     
     checkpoint = Path(__file__).resolve().parent/"check.pt"
     torch.save(model.dict_state(), checkpoint)
