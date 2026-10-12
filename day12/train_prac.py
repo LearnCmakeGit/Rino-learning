@@ -43,6 +43,8 @@ def main():
     print(" latent z: ", tuple(z.shape))
     print(" u query shape: " tuple(u_pred))
     
+    for i in range(5):
+        print(" input: ", i, samp_u[0,i])
     
     checkpoint = Path(__file__).resolve().parent/"check.pt"
     torch.save(model.dict_state(), checkpoint)
