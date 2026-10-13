@@ -16,8 +16,18 @@ def MakeData(num_samples = 512, num_input_points = 16, num_query_points = 32):
     
     for i in range(num_samples):
         freq = 0.5 + 2.5 * (i/num_samples)
-        phase = torch.sin(float(i))
-    
+        phase = 0.8*torch.sin(float(i))
+        
+        u_input_i = torch.sin(2.0*torch.pi*freq* x_input + phase)
+        u_query_i = torch.sin(2.0*torch.pi*freq* x_query[0,:] + phase)
+        sample_u.append(u_input_i)
+        sample_x_query.append(x_query)
+        sample_u_query.append(u_query_i)
+    u_input=sample_u.stack()
+    x_query=sample_x_query.stack()
+    u_query=sample_u_query.stack()
+        
+        
 def main():
     u_input,x_query,u_query = MakeData()
     dataset = TensorDataset(u_input, x_query, u_query)
