@@ -6,10 +6,17 @@ from pathlib import Path
 
 from model_prac import model_prac
 
-def MakeData():
-    u_input = nn.Linearspace(0,1,16)
-    x_query = nn.Linearspace(0,1,16).view(1,16)
+def MakeData(num_samples = 512, num_input_points = 16, num_query_points = 32):
     
+    x_input = nn.Linearspace(0,1,num_input_points)
+    x_query = nn.Linearspace(0,1,num_query_points).view(1, num_query_points)
+    sample_u = []
+    sample_x_query =[]
+    sample_u_query=[]
+    
+    for i in range(num_samples):
+        freq = 0.5 + 2.5 * (i/num_samples)
+        phase = torch.sin(float(i))
     
 def main():
     u_input,x_query,u_query = MakeData()
