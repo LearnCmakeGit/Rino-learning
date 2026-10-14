@@ -16,4 +16,16 @@ class model_prac(nmodules):
             nn.ReLU()
             nn.linear(hidden_dim, num_query)
             )
+            
+    def encoder(self,u_input):
+        return encode(u_input)
+        
+        
+    def decoder(self, x_query,z):
+        
+    
+    def forward(self, u_input,x_query):
+        z=encoder(u_input)
+        u_pred = decoder(x_query,z)
+        return u_pred, z
       
