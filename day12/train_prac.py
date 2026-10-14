@@ -9,7 +9,7 @@ from model_prac import model_prac
 def MakeData(num_samples = 512, num_input_points = 16, num_query_points = 32):
     
     x_input = nn.Linearspace(0,1,num_input_points)
-    x_query = nn.Linearspace(0,1,num_query_points).view(1, num_query_points)
+    x_query = nn.Linearspace(0,1,num_query_points).view(num_query_points,1)
     sample_u = []
     sample_x_query =[]
     sample_u_query=[]
@@ -19,7 +19,7 @@ def MakeData(num_samples = 512, num_input_points = 16, num_query_points = 32):
         phase = 0.8*torch.sin(float(i))
         
         u_input_i = torch.sin(2.0*torch.pi*freq* x_input + phase)
-        u_query_i = torch.sin(2.0*torch.pi*freq* x_query[0,:] + phase)
+        u_query_i = torch.sin(2.0*torch.pi*freq* x_query[:,0]+phase)
         sample_u.append(u_input_i)
         sample_x_query.append(x_query)
         sample_u_query.append(u_query_i)
