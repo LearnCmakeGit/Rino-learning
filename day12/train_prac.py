@@ -26,7 +26,7 @@ def MakeData(num_samples = 512, num_input_points = 16, num_query_points = 32):
     u_input=sample_u.stack()
     x_query=sample_x_query.stack()
     u_query=sample_u_query.stack()
-        
+    return u_input, x_query, u_query
         
 def main():
     u_input,x_query,u_query = MakeData()
