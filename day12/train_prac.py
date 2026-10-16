@@ -23,9 +23,9 @@ def MakeData(num_samples = 512, num_input_points = 16, num_query_points = 32):
         sample_u.append(u_input_i)
         sample_x_query.append(x_query)
         sample_u_query.append(u_query_i)
-    u_input=sample_u.stack()
-    x_query=sample_x_query.stack()
-    u_query=sample_u_query.stack()
+    u_input=torch.stack(sample_u)
+    x_query=torch.stack(sample_x_query)
+    u_query=torch.stack(sample_u_query)
     return u_input, x_query, u_query
         
 def main():
