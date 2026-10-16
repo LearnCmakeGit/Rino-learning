@@ -31,7 +31,7 @@ class model_prac(nn.Module):
         return self.decoder(z_cat)
         
     def forward(self, u_input,x_query):
-        z=self.encod(u_input)
+        z=self.encode(u_input)
         u_pred = self.decod(x_query,z)
         return u_pred, z
       
