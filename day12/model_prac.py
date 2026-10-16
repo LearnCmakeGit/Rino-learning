@@ -23,11 +23,14 @@ class model_prac(nmodules):
         return self.encoder(u_input)
         
         
-    def decod(self, x_query,z):
-        batch_size, num_query, num_coor = x_query.shape()
-    
+    def decode(self, x_query,z):
+        batch_size, num_query, num_coor = x_query.shape
+        z_expand = z.unsqueeze(1).expand(-1,num_query,-1)
+        
+        u_pred = self.decoder(z_expand)
+        
     def forward(self, u_input,x_query):
-        z=self.encoder(u_input)
-        u_pred = self.decoder(x_query,z)
+        z=self.encod(u_input)
+        u_pred = self.decod(x_query,z)
         return u_pred, z
       
