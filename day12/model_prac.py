@@ -7,15 +7,15 @@ class model_prac(nmodules):
         
         self.encoder = nn.sequential(
             nn.linear(num_input, hidden_dim),
-            nn.ReLU()
+            nn.ReLU(),
             nn.linear(hidden_dim, latent_dim)
         )
         
         self.decoder = nn.sequential(
             nn.linear(latent_dim+1, hidden_dim),
-            nn.ReLU()
-            nn.linear(hidden_dim, hidden_dim)
-            nn.ReLU()
+            nn.ReLU(),
+            nn.linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
             nn.linear(hidden_dim,1)
             )
             
