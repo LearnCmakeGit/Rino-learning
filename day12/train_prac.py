@@ -59,7 +59,7 @@ def main():
     print(" input shape: ", tuple(samp_u.shape))
     print(" x query shape: ", tuple(samp_x.shape))
     print(" latent z: ", tuple(z.shape))
-    print(" u query shape: " tuple(u_pred))
+    print(" u query shape: ", tuple(u_pred.shape))
     
     for i in range(5):
         xp = samp_x[0,i,0].item()
