@@ -6,7 +6,7 @@ class model_prac(nn.Module):
         super().__init__()
         
         self.encoder = nn.Sequential(
-            nn.Linear(num_input, hidden_dim),
+            nn.Linear(num_inputs, hidden_dim),
             nn.ReLU(),
             nn.Linear(hidden_dim, latent_dim)
         )
