@@ -27,7 +27,7 @@ class model_prac(nmodules):
         batch_size, num_query, num_coor = x_query.shape
         z_expand = z.unsqueeze(1).expand(-1,num_query,-1)
         
-        z_cat = torch.cat([z_expand, x_query],dim=-1）
+        z_cat = torch.cat([z_expand, x_query],dim = -1)
         return self.decoder(z_cat)
         
     def forward(self, u_input,x_query):
