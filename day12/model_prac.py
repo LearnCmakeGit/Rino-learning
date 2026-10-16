@@ -2,7 +2,7 @@ import torch
 from torch import nn
 
 class model_prac(nn.Module):
-    def __init__(self, num_inputs = 16, num_query=32,hidden_dim= 32, latent_dim=4):
+    def __init__(self, num_inputs = 16, hidden_dim= 32, latent_dim=4):
         super().__init__()
         
         self.encoder = nn.sequential(
