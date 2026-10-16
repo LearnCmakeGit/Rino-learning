@@ -6,17 +6,17 @@ class model_prac(nn.Module):
         super().__init__()
         
         self.encoder = nn.Sequential(
-            nn.linear(num_input, hidden_dim),
+            nn.Linear(num_input, hidden_dim),
             nn.ReLU(),
-            nn.linear(hidden_dim, latent_dim)
+            nn.Linear(hidden_dim, latent_dim)
         )
         
         self.decoder = nn.Sequential(
-            nn.linear(latent_dim+1, hidden_dim),
+            nn.Linear(latent_dim+1, hidden_dim),
             nn.ReLU(),
-            nn.linear(hidden_dim, hidden_dim),
+            nn.Linear(hidden_dim, hidden_dim),
             nn.ReLU(),
-            nn.linear(hidden_dim,1)
+            nn.Linear(hidden_dim,1)
             )
             
     def encode(self,u_input):
