@@ -8,8 +8,8 @@ from model_prac import model_prac
 
 def MakeData(num_samples = 512, num_input_points = 16, num_query_points = 32):
     
-    x_input = nn.Linearspace(0,1,num_input_points)
-    x_query = nn.Linearspace(0,1,num_query_points).view(num_query_points,1)
+    x_input = nn.linearspace(0,1,num_input_points)
+    x_query = nn.linearspace(0,1,num_query_points).view(num_query_points,1)
     sample_u = []
     sample_x_query =[]
     sample_u_query=[]
