@@ -5,13 +5,13 @@ class model_prac(nn.Module):
     def __init__(self, num_inputs = 16, hidden_dim= 32, latent_dim=4):
         super().__init__()
         
-        self.encoder = nn.sequential(
+        self.encoder = nn.Sequential(
             nn.linear(num_input, hidden_dim),
             nn.ReLU(),
             nn.linear(hidden_dim, latent_dim)
         )
         
-        self.decoder = nn.sequential(
+        self.decoder = nn.Sequential(
             nn.linear(latent_dim+1, hidden_dim),
             nn.ReLU(),
             nn.linear(hidden_dim, hidden_dim),
