@@ -32,7 +32,7 @@ def main():
     u_input,x_query,u_query = MakeData()
     dataset = TensorDataset(u_input, x_query, u_query)
     loader = DataLoader(dataset, batch_size = 32, shuffle = True)
-    model = model_prac(in_feat=16, hidden_dim =32,latent_dim=32)
+    model = model_prac(in_feat=16, hidden_dim =32,latent_dim=4)
     
     ls_fn = nn.MSELoss()
     opt = torch.optim.SGD(model.parameters(), lr =0.1)
