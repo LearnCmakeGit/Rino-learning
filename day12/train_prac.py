@@ -64,7 +64,7 @@ def main():
     for i in range(5):
         xp = samp_x[0,i,0].item()
         up =u_pred[0,i,0].item()
-        u_true=true_u[0,i,0].item()
+        u_true=true_u[0,i].item()
         print(f"xp: {xp:.5f}, up: {up:+.5f},true: {u_true:+.5f}")
     print("\nlatent z =", z.tolist())
     
