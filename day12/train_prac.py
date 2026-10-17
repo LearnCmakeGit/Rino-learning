@@ -22,7 +22,7 @@ def MakeData(num_samples = 512, num_input_points = 16, num_query_points = 32):
         u_query_i = torch.sin(2.0*torch.pi*freq* x_query[:,0]+phase)
         sample_u.append(u_input_i)
         sample_x_query.append(x_query)
-        sample_u_query.append(u_query_i.view(num_query_points,1)
+        sample_u_query.append(u_query_i.view(num_query_points,1))
     u_input=torch.stack(sample_u)
     x_query=torch.stack(sample_x_query)
     u_query=torch.stack(sample_u_query)
