@@ -57,7 +57,7 @@ def main():
         samp_u = u_input[0:1]
         samp_x = x_query[0:1]
         true_u = u_query[0:1]
-        u_pred,z= model(samp_u, sample_x)
+        u_pred,z= model(samp_u, samp_x)
     print(" input shape: ", tuple(samp_u.shape))
     print(" x query shape: ", tuple(samp_x.shape))
     print(" latent z: ", tuple(z.shape))
