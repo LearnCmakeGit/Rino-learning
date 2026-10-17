@@ -43,7 +43,7 @@ def main():
         for batch_u_input, batch_x, batch_u in loader:
             batch_pred,z= model(batch_u_input, batch_x)
             assert batch_pred.shape == batch_u.shape,  (
-                f" {batch_pred shape} != {batch_u.shape}")
+                f" {batch_pred.shape} != {batch_u.shape}")
             ls = ls_fn(batch_u, batch_pred)
             opt.zero_grad()
             ls.backward()
