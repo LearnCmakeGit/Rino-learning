@@ -12,7 +12,7 @@ def main():
     loader = DataLoader(dataset, batch_size=32,shuffle=True)
     
     model = model_prac()
-    
+    model.train()
     ls_fn = nn.MSELoss()
     
     opt = torch.optim.SGD(model.parameters(),lr =0.1)
@@ -27,6 +27,12 @@ def main():
             ls.backward()
             opt.step()
             epoch_loss += ls.item()
+        if step %100 == 0 or step == nums_step-1:
+            print(f"step {step:3d}, epoch_loss: {epoch_loss:4f}")
+    
+    
+    
+    
     
         
     
