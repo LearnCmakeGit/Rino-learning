@@ -16,8 +16,18 @@ def main():
     ls_fn = nn.MSELoss()
     
     opt = torch.optim.SGD(model.parameters(),lr =0.1)
+    num_steps = 800
     
-    for batch_u_inp, batch_x_query, batch_u_query in loader:
+    for stepcin range(num_steps):
+        epoch_loss = 0
+        for batch_u_inp, batch_x_query, batch_u_query in loader:
+            batch_u_pred,z=model(batch_u_inp,batch_x_query)
+            ls = ls_fn(batch_u_query, batch_u_pred)
+            opt.zero_grad()
+            ls.backward()
+            opt.step()
+            epoch_loss += ls.item()
+    
         
     
 
