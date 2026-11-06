@@ -29,7 +29,10 @@ def main():
             epoch_loss += ls.item()*batch_u_input.shape(0)
         if step %100 == 0 or step == nums_step-1:
             print(f"step {step:3d}, epoch_loss: {epoch_loss / len(loader):4f}")
-    
+    model.eval()
+    with torch.no_grad():
+        samp0 = u_input[0:1]
+        
     
     
     
