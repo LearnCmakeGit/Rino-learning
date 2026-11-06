@@ -32,6 +32,10 @@ def main():
     model.eval()
     with torch.no_grad():
         samp0 = u_input[0:1]
+        #check predict on arbitrarily locs
+        new_x = nn.linearspace(0,1,101).view(1,101,1)
+        pred0,_ = model(samp0,new_x)
+        
         
     
     
