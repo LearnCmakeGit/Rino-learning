@@ -26,7 +26,7 @@ def main():
             opt.zero_grad()
             ls.backward()
             opt.step()
-            epoch_loss += ls.item()
+            epoch_loss += ls.item()*batch_u_input.shape(0)
         if step %100 == 0 or step == nums_step-1:
             print(f"step {step:3d}, epoch_loss: {epoch_loss:4f}")
     
