@@ -4,7 +4,9 @@ from torch import nn
 from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
 
-
+def DataGen(nums_samp =512, nums_input =16, nums_query =24):
+    input_x = nn.linearspace(0,1,nums_input)
+    
 
 def main():
     u_input,x_query,u_query = DataGen()
