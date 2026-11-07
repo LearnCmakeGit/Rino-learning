@@ -40,7 +40,11 @@ def main():
         query_x0 = nn.linearspace(0,1,16).view(1,16,1)
         pred0,_ = model(samp0,query_x0)
         mse = ls_fn(samp0,pred0(...,0)).item()
-        print("pred101
+        print("samp0 shape", tuple(samp0.shape))
+        print("z0 shape", tuple(z0.shape))
+        print("pred0 shape", tuple(pred0.shape))
+        print(f"mse, {mse:6f}")
+        
         
         
         
