@@ -1,4 +1,4 @@
-import torch
+#import torch
 from torch import nn
 
 from torch.utils.data import Dataset, DataLoader
@@ -32,9 +32,17 @@ def main():
     model.eval()
     with torch.no_grad():
         samp0 = u_input[0:1]
-        #check predict on arbitrarily locs
+        #check1  predict on arbitrarily locs
         new_x = nn.linearspace(0,1,101).view(1,101,1)
-        pred0,_ = model(samp0,new_x)
+        pred101,z0 = model(samp0,new_x)
+        
+        #check2 mse for samp0 on input_x locations
+        query_x0 = nn.linearspace(0,1,16).view(1,16,1)
+        pred0,_ = model(samp0,query_x0)
+        mse = ls_fn(samp0,pred0(...,0))
+        print("pred101
+        
+        
         
         
     
