@@ -39,7 +39,7 @@ def main():
         #check2 mse for samp0 on input_x locations
         query_x0 = nn.linearspace(0,1,16).view(1,16,1)
         pred0,_ = model(samp0,query_x0)
-        mse = ls_fn(samp0,pred0(...,0))
+        mse = ls_fn(samp0,pred0(...,0)).item()
         print("pred101
         
         
