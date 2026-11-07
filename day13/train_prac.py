@@ -45,8 +45,8 @@ def main():
         print("pred0 shape", tuple(pred0.shape))
         print(f"mse, {mse:6f}")
         
-    checkpoint=Path(__file__).resolve().parent()/"sace.pt"
-    torch.save(model.state_list(),checkpoint)
+    checkpoint=Path(__file__).resolve().parent/"day13.pt"
+    torch.save(model.state_dict(),checkpoint)
         
         
         
