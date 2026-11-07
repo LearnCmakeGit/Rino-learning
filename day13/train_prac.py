@@ -45,7 +45,8 @@ def main():
         print("pred0 shape", tuple(pred0.shape))
         print(f"mse, {mse:6f}")
         
-        
+    Path(__file__).resolve().parent()/"sace.pt"
+    
         
         
         
