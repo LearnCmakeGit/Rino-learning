@@ -5,7 +5,7 @@ from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
 
 def DataGen(nums_samp =512, nums_input =16, nums_query =24):
-    input_x = nn.linearspace(0,1,nums_input)
+    input_x = torch.linspace(0,1,nums_input)
     
 
 def main():
@@ -35,11 +35,11 @@ def main():
     with torch.no_grad():
         samp0 = u_input[0:1]
         #check1  predict on arbitrarily locs
-        new_x = nn.linearspace(0,1,101).view(1,101,1)
+        new_x = torch.linspace(0,1,101).view(1,101,1)
         pred101,z0 = model(samp0,new_x)
         
         #check2 mse for samp0 on input_x locations
-        query_x0 = nn.linearspace(0,1,16).view(1,16,1)
+        query_x0 = torch.linspace(0,1,16).view(1,16,1)
         pred0,_ = model(samp0,query_x0)
         mse = ls_fn(samp0,pred0(...,0)).item()
         print("samp0 shape", tuple(samp0.shape))
