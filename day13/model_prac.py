@@ -17,4 +17,8 @@ class model_prac(nn.modules):
             nn.Linear(hidden_dim,1)
         )
     def encode(slef, u_input):
+        return self.encoder(u_input)
+    def decode(self, z, x_query):
+        
+   
     
