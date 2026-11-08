@@ -19,6 +19,7 @@ class model_prac(nn.modules):
     def encode(slef, u_input):
         return self.encoder(u_input)
     def decode(self, z, x_query):
+        assert z.dim == 2
+        z_repeat = z.unsqueeze(1).expand(-1,num_queries,-1)
         
-   
     
