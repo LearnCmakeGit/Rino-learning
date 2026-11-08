@@ -10,7 +10,11 @@ class model_prac(nn.modules):
             nn.Linear(hidden_dim, latent_dim)
         )
         self.decoder =nn.Sequential(
-            nn.Linear(latent_
-      
+            nn.Linear(latent_dim+1, hidden_dim)
+            nn.Tanh()
+            nn.Linear(hidden_dim, hidden_dim)
+            nn.Tanh()
+            nn.Linear(hidden_dim,1)
         )
+    def encode(slef, u_input):
     
