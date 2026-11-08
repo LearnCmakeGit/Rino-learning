@@ -23,6 +23,8 @@ class model_prac(nn.modules):
         z_repeat = z.unsqueeze(1).expand(-1,x_query.shape[1],-1)
         decode_input = torch.cat((z_repeat,x_query), dim=-1)
         return self.decoder(decode_input)
-    def forward():
+    def forward(self, u_input, x_query):
+        z=self.encode(u_input)
+        return self.decode(z, x_query), z
         
     
