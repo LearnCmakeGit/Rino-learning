@@ -4,8 +4,10 @@ from torch import nn
 from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
 
-def DataGen(nums_samp =512, nums_input =16, nums_query =24):
-    input_x = torch.linspace(0,1,nums_input)
+def DataGen(num_samps =512, num_inputs =16, num_queries = 24):
+    input_x = torch.linspace(0,1,num_inputs)
+    freq = 0.5 + 2.5 * torch.randm(num_samps,1)
+    phas = -torch.pi + 2*torch.pi*torch.randm(num_samps,1)
     
 
 def main():
