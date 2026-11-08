@@ -20,6 +20,7 @@ class model_prac(nn.modules):
         return self.encoder(u_input)
     def decode(self, z, x_query):
         assert z.dim == 2
-        z_repeat = z.unsqueeze(1).expand(-1,num_queries,-1)
+        z_repeat = z.unsqueeze(1).expand(-1,x_query.shape[1],-1)
+        decode_input = 
         
     
