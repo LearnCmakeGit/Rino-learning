@@ -28,7 +28,7 @@ def main():
     opt = torch.optim.SGD(model.parameters(),lr =0.1)
     num_steps = 800
     
-    for stepcin range(num_steps):
+    for step in range(num_steps):
         epoch_loss = 0
         for batch_u_inp, batch_x_query, batch_u_query in loader:
             batch_u_pred,z=model(batch_u_inp,batch_x_query)
