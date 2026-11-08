@@ -1,4 +1,4 @@
-#import torch
+import torch
 from torch import nn
 
 from torch.utils.data import Dataset, DataLoader
@@ -58,14 +58,5 @@ def main():
     checkpoint=Path(__file__).resolve().parent/"day13.pt"
     torch.save(model.state_dict(),checkpoint)
         
-        
-        
-    
-    
-    
-    
-        
-    
-
 if __name__ == "__main__":
     main()
