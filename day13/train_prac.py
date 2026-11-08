@@ -5,7 +5,7 @@ from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
 
 def DataGen(num_samps =512, num_inputs =16, num_queries = 24):
-    input_x = torch.linspace(0,1,num_inputs)
+    input_x = torch.linspace(0,1,num_inputs).view(num_inputs,1)
     freq = 0.5 + 2.5 * torch.randm(num_samps,1)
     phas = -torch.pi + 2*torch.pi*torch.randm(num_samps,1)
     
