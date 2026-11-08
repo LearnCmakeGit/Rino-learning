@@ -5,7 +5,7 @@ from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
 
 def wave(query,freq,phas):
-    u = torch.sin(2*torch.pi* freq*query + phas)
+    u = torch.sin(2.0 * torch.pi * freq* query + phas)
     return u
 
 def DataGen(num_samps =512, num_inputs =16, num_queries = 24):
