@@ -21,6 +21,6 @@ class model_prac(nn.modules):
     def decode(self, z, x_query):
         assert z.dim == 2
         z_repeat = z.unsqueeze(1).expand(-1,x_query.shape[1],-1)
-        decode_input = 
+        decode_input = torch.cat(z_repeat,x_query)
         
     
