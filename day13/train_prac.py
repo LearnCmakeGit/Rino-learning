@@ -20,7 +20,7 @@ def DataGen(num_samps =512, num_inputs =16, num_queries = 24):
     return u_input, x_query, u_query
 def main():
     u_input,x_query,u_query = DataGen()
-    dataset = Dataset(u_input, x_query, u_query)
+    dataset = TensorDataset(u_input, x_query, u_query)
     loader = DataLoader(dataset, batch_size=32,shuffle=True)
     
     model = model_prac()
