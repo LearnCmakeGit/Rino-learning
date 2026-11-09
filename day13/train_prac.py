@@ -1,8 +1,9 @@
 import torch
 from torch import nn
 
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import TensorDataset, DataLoader
 from pathlib import Path
+from model_prac import model_prac
 
 def wave(query,freq,phas):
     u = torch.sin(2.0 * torch.pi * freq* query + phas)
