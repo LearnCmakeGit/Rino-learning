@@ -27,7 +27,7 @@ def main():
     model.train()
     ls_fn = nn.MSELoss()
     
-    opt = torch.optim.SGD(model.parameters(),lr =0.1)
+    opt = torch.optim.Adam(model.parameters(),lr =0.1)
     num_steps = 800
     
     for step in range(num_steps):
@@ -38,8 +38,8 @@ def main():
             opt.zero_grad()
             ls.backward()
             opt.step()
-            epoch_loss += ls.item()*batch_u_input.shape(0)
-        if step %100 == 0 or step == nums_step-1:
+            epoch_loss += ls.item()*batch_u_input.shape[0]
+        if step %100 == 0 or step == num_steps-1:
             print(f"step {step:3d}, epoch_loss: {epoch_loss / len(loader):4f}")
     model.eval()
     with torch.no_grad():
