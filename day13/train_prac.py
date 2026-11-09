@@ -38,7 +38,7 @@ def main():
             opt.zero_grad()
             ls.backward()
             opt.step()
-            epoch_loss += ls.item()*batch_u_input.shape[0]
+            epoch_loss += ls.item()*batch_u_inp.shape[0]
         if step %100 == 0 or step == num_steps-1:
             print(f"step {step:3d}, epoch_loss: {epoch_loss / len(loader):4f}")
     model.eval()
@@ -51,7 +51,7 @@ def main():
         #check2 mse for samp0 on input_x locations
         query_x0 = torch.linspace(0,1,16).view(1,16,1)
         pred0,_ = model(samp0,query_x0)
-        mse = ls_fn(samp0,pred0(...,0)).item()
+        mse = ls_fn(samp0,pred0[...,0]).item()
         print("samp0 shape", tuple(samp0.shape))
         print("z0 shape", tuple(z0.shape))
         print("pred0 shape", tuple(pred0.shape))
