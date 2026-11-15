@@ -19,6 +19,7 @@ def DataGen(num_samps =512, num_inputs =16, num_queries = 24):
     u_query = wave(x_query[...,0],freq, phas).unsqueeze(-1)
     return u_input, x_query, u_query
 def main():
+    torch.manual_seed(0)
     u_input,x_query,u_query = DataGen()
     dataset = TensorDataset(u_input, x_query, u_query)
     loader = DataLoader(dataset, batch_size=32,shuffle=True)
