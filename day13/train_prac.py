@@ -27,7 +27,7 @@ def main():
     model.train()
     ls_fn = nn.MSELoss()
     
-    opt = torch.optim.Adam(model.parameters(),lr =0.1)
+    opt = torch.optim.Adam(model.parameters(),lr =1e-3)
     num_steps = 800
     
     for step in range(num_steps):
