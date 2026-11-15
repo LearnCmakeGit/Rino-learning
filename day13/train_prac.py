@@ -15,8 +15,8 @@ def DataGen(num_samps =512, num_inputs =16, num_queries = 24):
     phas = -torch.pi + 2.0 * torch.pi*torch.rand(num_samps,1)
     
     u_input = wave(input_x, freq, phas)
-    x_query = torch.linspace(0,1,num_queries).view(1,num_queries)
-    u_query = wave(x_query, freq, phas).unsqueeze(-1)
+    x_query = torch.rand(num_samps, num_queries,1)
+    u_query = wave(x_query(...,0), freq, phas).unsqueeze(-1)
     return u_input, x_query, u_query
 def main():
     u_input,x_query,u_query = DataGen()
