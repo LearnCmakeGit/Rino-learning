@@ -3,7 +3,7 @@ from torch import nn
 
 class model_prac(nn.Module):
     
-    def __init__(self, in_fea = 16, hidden_dim = 8, latent_dim = 4):
+    def __init__(self, in_fea = 16, hidden_dim = 64，latent_dim = 4):
         super().__init__()
         self.encoder = nn.Sequential(
             nn.Linear(in_fea, hidden_dim),
