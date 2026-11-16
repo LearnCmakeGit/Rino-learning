@@ -5,7 +5,7 @@ from torch import nn
 class QueryFunctionModel(nn.Module):
     """Encode 16 function samples into z, then evaluate u(x_query)."""
 
-    def __init__(self, num_input_points=16, hidden_dim=64, latent_dim=8):
+    def __init__(self, num_input_points=16, hidden_dim=64,latent_dim=8):
         super().__init__()
         self.encoder = nn.Sequential(
             nn.Linear(num_input_points, hidden_dim),
