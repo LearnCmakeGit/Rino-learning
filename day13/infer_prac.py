@@ -23,7 +23,7 @@ def main():
     print("query_x shape:", tuple(query_x.shape))
     print("pred shape:", tuple(pred.shape))
     print("true shape:", tuple(true_u.shape))
-    
+    print("mse :", mse)
     
     
     
