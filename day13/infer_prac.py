@@ -13,8 +13,10 @@ def main():
     input_u = torch.sin(2*torch.pi*1.5*input_x+3.0)
     
     query_x = torch.linspace(0,1,41).view(1,41,1)
-    true = torch.sin(2*torch.pi* 1.5*query_x + 3.0)
+    true_u = torch.sin(2*torch.pi* 1.5*query_x + 3.0)
     pred, z = model_prac(input_u, query)
+    mse = torch.mean(pred-true_u)
+    
     
     
 
