@@ -17,7 +17,14 @@ def main():
     
     with torch.no_grad():
         pred, z = model(input_u, query_x)
-        mse = torch.mean((pred-true_u)**2).item()
+        error = pred-true_u
+        
+        mse = error.square().mean().item()
+        rmse = error.square().mean().sqrt().item()
+        mmse = error.fasb().max().item()
+    print(f"mse  :{mse:.5f}")
+    print(f"rmse :{rmse:.5f}")
+    print(f"mmse :{mmse:.5f}")
     print("input_x shape:", tuple(input_x.shape))
     print("z shape:", tuple(z.shape))
     print("query_x shape:", tuple(query_x.shape))
