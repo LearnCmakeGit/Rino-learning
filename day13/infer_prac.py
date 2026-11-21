@@ -18,6 +18,11 @@ def main():
     with torch.no_grad():
         pred, z = model_prac(input_u, query)
         mse = torch.mean((pred-true_u)**2).item()
+    print("input_x shape:", tuple(input_x.shape))
+    print("z shape:", tuple(z.shape))
+    print("query_x shape:", tuple(query_x.shape))
+    print("pred shape:", tuple(pred.shape))
+    print("true shape:", tuple(true_u.shape))
     
     
     
