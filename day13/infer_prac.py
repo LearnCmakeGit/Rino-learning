@@ -21,7 +21,7 @@ def main():
         
         mse = error.square().mean().item()
         rmse = error.square().mean().sqrt().item()
-        mmse = error.fasb().max().item()
+        mmse = error.abs().max().item()
     print(f"mse  :{mse:.5f}")
     print(f"rmse :{rmse:.5f}")
     print(f"mmse :{mmse:.5f}")
