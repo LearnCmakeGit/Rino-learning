@@ -25,9 +25,9 @@ def main():
     print("true shape:", tuple(true_u.shape))
     print("mse :", mse)
     for i in {1,5,10,20,30}:
-        print(f" query_x: {query_x[1:i:1]:.2f}    "
-              f" pred: {pred[1:i:1]:+.4f}    "
-              f" true: {true_u[1:i:1]:+.4f}.")
+        print(f" query_x: {query_x[0:i:0].2f}    "
+              f" pred: {pred[0:i:0]:+.4f}    "
+              f" true: {true_u[0:i:0]:+.4f}.")
             
     
     
