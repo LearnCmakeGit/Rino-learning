@@ -6,7 +6,7 @@ from pathlib import Path
 def main():
     path = Path(__file__).resolve().parent/"day13.pt"
     model = model_prac();
-    model.load_state_dict(torch.load(path, map_location="cpu", weights_only=True)
+    model.load_state_dict(torch.load(path, map_location="cpu", weights_only=True))
     model.eval()
 
     input_x = torch.linspace(0,1,16).view(1,16)
