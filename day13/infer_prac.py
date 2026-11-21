@@ -9,6 +9,9 @@ def main():
     model.load_state_dict(torch.load(path, map_location="cpu", weights_only=True)
     model.eval()
 
+    input_x = torch.linspace(0,1,16).view(1,16)
+    input_u = torch.sin(2*torch.pi*1.5*input_x+3.0)
+    
 
 if __name__ == "__main__":
     main()
