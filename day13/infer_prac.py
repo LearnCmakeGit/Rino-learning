@@ -24,7 +24,11 @@ def main():
     print("pred shape:", tuple(pred.shape))
     print("true shape:", tuple(true_u.shape))
     print("mse :", mse)
-    
+    for i in {1,5,10,20,30}:
+        print(f" query_x: {query_x[1:i:1]:.2f""}  "
+              f" pred: {pred[1:i:1]:.4f}    "
+              f" true: {true_u[1:i:1]:.4f}.")
+            
     
     
 
