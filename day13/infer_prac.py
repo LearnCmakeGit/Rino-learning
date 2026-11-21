@@ -14,8 +14,10 @@ def main():
     
     query_x = torch.linspace(0,1,41).view(1,41,1)
     true_u = torch.sin(2*torch.pi* 1.5*query_x + 3.0)
-    pred, z = model_prac(input_u, query)
-    mse = torch.mean(pred-true_u).item()
+    
+    with torch.no_grad():
+        pred, z = model_prac(input_u, query)
+        mse = torch.mean((pred-true_u)**2).item()
     
     
     
