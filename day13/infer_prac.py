@@ -21,10 +21,10 @@ def main():
         
         mse = error.square().mean().item()
         rmse = error.square().mean().sqrt().item()
-        mmse = error.abs().max().item()
+        max_error = error.abs().max().item()
     print(f"mse  :{mse:.5f}")
     print(f"rmse :{rmse:.5f}")
-    print(f"mmse :{mmse:.5f}")
+    print(f"max_error :{max_error:.5f}")
     print("input_x shape:", tuple(input_x.shape))
     print("z shape:", tuple(z.shape))
     print("query_x shape:", tuple(query_x.shape))
