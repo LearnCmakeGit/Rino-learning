@@ -16,7 +16,7 @@ def main():
     true_u = torch.sin(2*torch.pi* 1.5*query_x + 3.0)
     
     with torch.no_grad():
-        pred, z = model_prac(input_u, query_x)
+        pred, z = model(input_u, query_x)
         mse = torch.mean((pred-true_u)**2).item()
     print("input_x shape:", tuple(input_x.shape))
     print("z shape:", tuple(z.shape))
