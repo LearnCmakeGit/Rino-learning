@@ -22,7 +22,7 @@ class model_prac(nn.Module):
     def decode(self, z, query_x):
         assert(z.shape[0]==query_x.shape[0])
         z_repeat=z.unsqueze(1).expand(-1,query_x.shape[1],-1)
-        decode_in = torch.cat(z_repeat,query_x,dim=-1)
+        decode_in = torch.cat((z_repeat,query_x),dim=-1)
         return self.decoder(decode_in)
     def forward(self, input_u, query_x):
         z=encode(input_u)
