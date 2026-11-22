@@ -9,7 +9,6 @@ class model_prac(nn.Module):
           nn.Linear(in_fea, hidden_dim),
           nn.Tanh(),
           nn.Linear(hidden_dim, latent_dim)
-          
         )
         self.decoder = nn.Sequential(
           nn.Linear(latent_dim +1, hidden_dim),
