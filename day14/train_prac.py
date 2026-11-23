@@ -30,7 +30,9 @@ def main():
             epoch_loss += ls.item()*batch_u.shape[0]
         if(step % 100 == 0 or step == num_steps-1):
             print(f"step {step:4d}, epoch_loss {epoch_loss:4f}")
-    
+    with torch.no_grad():
+        samp_u = imput_u[0:1,...]
+        
 
 if __name__=="__main__":
     main()
