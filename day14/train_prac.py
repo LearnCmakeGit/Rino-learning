@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 
-from utils.data import Dataset, Dataloader, Tensordata
+from torch.utils.data import Dataloader, TensorDataset
 from pathlib import Path
 
 def main():
