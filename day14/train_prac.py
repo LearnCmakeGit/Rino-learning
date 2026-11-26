@@ -32,6 +32,10 @@ def main():
             print(f"step {step:4d}, epoch_loss {epoch_loss:4f}")
     with torch.no_grad():
         samp_u = imput_u[0:1,...]
+        samp_x = nn.linspace(0,1,16).view(1,16,1)
+        pred_1, _= model_prac(samp_u,samp_x)
+        
+        
         
 
 if __name__=="__main__":
