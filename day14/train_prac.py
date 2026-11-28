@@ -34,7 +34,8 @@ def main():
         samp_u = imput_u[0:1,...]
         samp_x = nn.linspace(0,1,16).view(1,16,1)
         pred_1, _= model_prac(samp_u,samp_x)
-        mse = ls_fn(pred_1[...,0],samp_u)
+        mse = ls_fn(pred_1[...,0],samp_u).item()
+        print(f"mse {mse:5f}")
     
     
         
